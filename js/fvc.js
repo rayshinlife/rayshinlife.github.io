@@ -95,7 +95,15 @@
         "num": 36.2,
         "plant": [],
         "cook": [],
-        "process": []
+        "process": [
+         {
+            "name": "釀鳳梨酒",
+            "url": "https://youtu.be/VQ1wd84ImDk"
+          },{
+            "name": "鳳梨冰茶",
+            "url": "https://youtu.be/T2SrVOWQg50"
+          }
+        ]
       }, {
         "en": "Mandarin Orange",
         "tw": "橘子",
@@ -113,14 +121,24 @@
         "num": 9.0,
         "plant": [],
         "cook": [],
-        "process": []
+        "process": [
+         {
+            "name": "火龍果開花結果要領",
+            "url": "https://youtu.be/nigCANV4Ocw"
+          }
+        ]
       }, {
         "en": "Banana",
         "tw": "香蕉",
         "cn": "香蕉",
         "ja": "バナナ",
         "num": 8.7,
-        "plant": [],
+        "plant": [
+        {
+            "name": "古早香蕉催熟法",
+            "url": "https://youtu.be/EWB55EIY_MU"
+          }
+        ],
         "cook": [],
         "process": []
       }, {
@@ -131,7 +149,12 @@
         "num": 4.0,
         "plant": [],
         "cook": [],
-        "process": []
+        "process": [
+        {
+            "name": "青蘋果果膠",
+            "url": "https://youtu.be/QsXan7MOrBM"
+          }
+        ]
       }, {
         "en": "Grape",
         "tw": "葡萄",
