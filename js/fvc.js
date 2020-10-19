@@ -121,7 +121,7 @@
         "num": 9.0,
         "plant": [
         {
-            "name": "火龍果開花結果要領",
+            "name": "火龍果種植",
             "url": "https://youtu.be/nigCANV4Ocw"
           },{
             "name": "火龍果全紀錄",
