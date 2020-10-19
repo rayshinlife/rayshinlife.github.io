@@ -126,15 +126,17 @@
         "cn": "黃瓜",
         "ja": "胡瓜",
         "num": 10.0,
-        "plant": [],
+        "plant": [
+        {
+            "name": "小黃瓜種植",
+            "url": "https://youtu.be/Wv6loe31VlU"
+          }
+        ],
         "cook": [],
         "process": [
         {
             "name": "醃脆瓜",
             "url": "https://youtu.be/yO_qMRihgdQ"
-          },{
-            "name": "小黃瓜種植",
-            "url": "https://youtu.be/Wv6loe31VlU"
           }
         ]
       }, {
@@ -153,15 +155,16 @@
         "ja": "南瓜",
         "num": 9.0,
         "plant": [],
-        "cook": [],
-        "process": [
-         {
+        "cook": [
+        {
            "name": "南瓜粉蒸排骨",
             "url": "https://youtu.be/b9Jkk6kl3Rc"
           },{
             "name": "蛤蠣南瓜濃湯",
             "url": "https://youtu.be/oItU0GAqcWQ"
           }
+        ],
+        "process": [
         ]
       }, {
         "en": "Onion",
@@ -197,12 +200,13 @@
         "ja": "ナス",
         "num": 3.0,
         "plant": [],
-        "cook": [],
-        "process": [
-         {
+        "cook": [
+        {
            "name": "涼拌茄子",
             "url": "https://youtu.be/0RMNxpAzhWk"
           }
+        ],
+        "process": [
         ]
       }
     ]
