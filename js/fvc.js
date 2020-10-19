@@ -52,7 +52,12 @@
         "cn": "柚",
         "ja": "ザボン",
         "num": 59.0,
-        "plant": [],
+        "plant": [
+        {
+            "name": "文旦柚種植",
+            "url": "https://youtu.be/x9yle9OTsew"
+          }
+        ],
         "cook": [],
         "process": []
       }, {
