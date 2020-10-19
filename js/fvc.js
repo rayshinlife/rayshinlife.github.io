@@ -119,14 +119,17 @@
         "cn": "火龙果",
         "ja": "ドラゴンフルーツ",
         "num": 9.0,
-        "plant": [],
-        "cook": [],
-        "process": [
-         {
+        "plant": [
+        {
             "name": "火龍果開花結果要領",
             "url": "https://youtu.be/nigCANV4Ocw"
+          },{
+            "name": "火龍果全紀錄",
+            "url": "https://youtu.be/Ghg0g0UMsQw"
           }
-        ]
+        ],
+        "cook": [],
+        "process": []
       }, {
         "en": "Banana",
         "tw": "香蕉",
@@ -135,7 +138,7 @@
         "num": 8.7,
         "plant": [
         {
-            "name": "古早香蕉催熟法",
+            "name": "香蕉催熟法",
             "url": "https://youtu.be/EWB55EIY_MU"
           }
         ],
