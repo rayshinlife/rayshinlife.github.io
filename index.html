@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello Table</title>
+  <meta charset="utf-8" />
+  <style>
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/collector.js"></script>
+  <script src="js/vvc.js"></script>
+  <script src="js/fvc.js"></script>
+  <script>
+  console.log(collector);
+
+  function createDiv(did) {
+    return $("<div>", {
+      id: did,
+      css: {
+        "border": "1px solid #729c0b",
+        "display": "table"
+      }
+    });
+  }
+
+  function addHead(ele, parent) {
+    const theadStyle = "background: #729c0b; color: white; text-align: center; border-bottom: 1px solid #f7f7f7; padding: 10px;";
+    var tr = $('<tr>');
+    $.each(ele.columns, function(idx, ele) {
+      const td = $(`<td style="${theadStyle}">`).text(ele);
+      tr.append(td)
+    });
+    parent.append(tr);
+  }
+
+  function addLinks(arr) {
+    var divs = "";
+    $.each(arr, function(idx, ele) {
+      divs += `<div><a href="${ele.url}" target="blank">${ele.name}</a></div>`;
+    });
+    return divs;
+  }
+
+  function addBody(data, parent) {
+    const max = Math.max(...data.map(ele => ele.num)); 
+
+    $.each(data, function(idx, ele) {
+      const left = Math.round(ele.num / max * 100);
+      const right = left + 1;
+      const tbodyStyle = "border-bottom: 1px solid #f7f7f7; padding: 10px;";
+      const tbodyStyleBarChart = `background: linear-gradient(to right, #efefef ${left}%, white ${right}%);`;
+
+      $('<tr>').append(
+        $(`<td style="${tbodyStyle}">`).html(ele.tw),
+        $(`<td style="${tbodyStyle}">`).html(ele.cn),
+        $(`<td style="${tbodyStyle}">`).html(ele.en),
+        $(`<td style="${tbodyStyle}">`).html(ele.ja),
+        $(`<td style="${tbodyStyle + tbodyStyleBarChart}">`).html(ele.num),
+        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.plant)),
+        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.cook)),
+        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.process))
+      ).appendTo(parent);
+    });
+  }
+
+  function createTable(ele) {
+    var table = $("<table border=0></table>");
+    var thead = $("<thead></thead>");
+    var tbody = $("<tbody></tbody>");
+    
+    addHead(ele, thead);
+    addBody(ele.data, tbody);
+
+    table.append(thead);
+    table.append(tbody);
+
+    return table;
+  }
+
+  function printAllTables() {
+    $.each(collector, function(idx, ele) {
+      const header = $("<h1>").text(ele.title);
+      var div = createDiv(ele.tag).append(createTable(ele));
+      const hr = $("<hr>");
+
+      $('body').append(header);
+      $('body').append(div);
+      $('body').append(hr);
+    });
+  }
+
+  $(document).ready(function(){
+    printAllTables();
+  });
+  </script>
+</head>
+<body>
+</body>
+</html>
+
+
