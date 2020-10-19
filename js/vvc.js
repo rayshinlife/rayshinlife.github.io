@@ -128,7 +128,15 @@
         "num": 10.0,
         "plant": [],
         "cook": [],
-        "process": []
+        "process": [
+        {
+            "name": "醃脆瓜",
+            "url": "https://youtu.be/yO_qMRihgdQ"
+          },{
+            "name": "小黃瓜種植",
+            "url": "https://youtu.be/Wv6loe31VlU"
+          }
+        ]
       }, {
         "en": "Blanched Chinese Chive",
         "tw": "韭黃",
@@ -146,7 +154,15 @@
         "num": 9.0,
         "plant": [],
         "cook": [],
-        "process": []
+        "process": [
+         {
+           "name": "南瓜粉蒸排骨",
+            "url": "https://youtu.be/b9Jkk6kl3Rc"
+          },{
+            "name": "蛤蠣南瓜濃湯",
+            "url": "https://youtu.be/oItU0GAqcWQ"
+          }
+        ]
       }, {
         "en": "Onion",
         "tw": "洋蔥",
@@ -182,7 +198,12 @@
         "num": 3.0,
         "plant": [],
         "cook": [],
-        "process": []
+        "process": [
+         {
+           "name": "涼拌茄子",
+            "url": "https://youtu.be/0RMNxpAzhWk"
+          }
+        ]
       }
     ]
   });
