@@ -121,10 +121,10 @@
         "num": 9.0,
         "plant": [
         {
-            "name": "火龍果種植",
+            "name": "火龍果種植教學",
             "url": "https://youtu.be/nigCANV4Ocw"
           },{
-            "name": "火龍果全紀錄",
+            "name": "火龍果種植紀錄",
             "url": "https://youtu.be/Ghg0g0UMsQw"
           }
         ],
