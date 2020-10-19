@@ -119,7 +119,12 @@
         "num": 13.0,
         "plant": [],
         "cook": [],
-        "process": []
+        "process": [
+        {
+            "name": "蘿蔔乾",
+            "url": "https://youtu.be/kEKOhaiLe6k"
+          }
+        ]
       }, {
         "en": "Cucumber",
         "tw": "小黃瓜",
