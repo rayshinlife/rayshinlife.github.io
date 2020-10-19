@@ -70,7 +70,12 @@
         "num": 24.0,
         "plant": [],
         "cook": [],
-        "process": []
+        "process": [
+        {
+            "name": "紫蘇梅醃漬蕃茄",
+            "url": "https://youtu.be/LUi6--XrHi8"
+          }
+        ]
       }, {
         "en": "Winter Melon",
         "tw": "冬瓜",
