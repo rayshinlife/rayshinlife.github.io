@@ -412,5 +412,32 @@ const all_data = {
     "plant": [],
     "cook": [],
     "process": []
+  },
+  "_Pea_": {
+    "en": "Pea",
+    "tw": "豌豆",
+    "cn": "",
+    "ja": "",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Celery_": {
+    "en": "Celery",
+    "tw": "芹菜/西洋芹",
+    "cn": "",
+    "ja": "",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Passion_Fruit_": {
+    "en": "Passion Fruit",
+    "tw": "百香果",
+    "cn": "",
+    "ja": "",
+    "plant": [],
+    "cook": [],
+    "process": []
   }
 };
