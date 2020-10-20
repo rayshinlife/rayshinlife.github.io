@@ -385,5 +385,23 @@ const all_data = {
     ],
     "process": [
     ]
+  },
+  "_Avocado_": {
+    "en": "Avocado",
+    "tw": "酪梨",
+    "cn": "牛油果",
+    "ja": "",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Mango_": {
+    "en": "Mango",
+    "tw": "芒果",
+    "cn": "",
+    "ja": "",
+    "plant": [],
+    "cook": [],
+    "process": []
   }
 };
