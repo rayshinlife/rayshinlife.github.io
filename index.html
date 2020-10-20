@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/collector.js"></script>
+  <script src="js/global.js"></script>
   <script src="js/vvc.js"></script>
   <script src="js/fvc.js"></script>
   <script>
@@ -52,14 +52,14 @@
       const tbodyStyleBarChart = `background: linear-gradient(to right, #efefef ${left}%, white ${right}%);`;
 
       $('<tr>').append(
-        $(`<td style="${tbodyStyle}">`).html(ele.tw),
-        $(`<td style="${tbodyStyle}">`).html(ele.cn),
-        $(`<td style="${tbodyStyle}">`).html(ele.en),
-        $(`<td style="${tbodyStyle}">`).html(ele.ja),
+        $(`<td style="${tbodyStyle}">`).html(ele.d.tw),
+        $(`<td style="${tbodyStyle}">`).html(ele.d.cn),
+        $(`<td style="${tbodyStyle}">`).html(ele.d.en),
+        $(`<td style="${tbodyStyle}">`).html(ele.d.ja),
         $(`<td style="${tbodyStyle + tbodyStyleBarChart}">`).html(ele.num),
-        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.plant)),
-        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.cook)),
-        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.process))
+        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.plant)),
+        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.cook)),
+        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.process))
       ).appendTo(parent);
     });
   }

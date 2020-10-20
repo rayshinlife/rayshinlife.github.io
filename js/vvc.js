@@ -1,4 +1,4 @@
-(function(col) {
+(function(col, data) {
 
   col.push({
     "title": "Veg Vitamin C",
@@ -6,220 +6,55 @@
     "columns": ["繁體", "简体", "English", "日本語", "每100克含量 (mg/100g)", "種植", "食譜", "加工"], 
     "data": [
       {
-        "en": "Bitter Cucumber",
-        "tw": "苦瓜",
-        "cn": "苦瓜",
-        "ja": "ツルレイシ",
-        "num": 120.0,
-        "plant": [
-          {
-            "name": "綠苦瓜種植教學",
-            "url": "https://youtu.be/NWQXF4fsMcw"
-          },{
-            "name": "綠苦瓜第2春教學",
-            "url": "https://youtu.be/gWT-9HiohTo"
-          }
-        ],
-        "cook": [
-          {
-            "name": "沖繩苦瓜雜炒",
-            "url": "https://youtu.be/vumnbJY4xCU"
-          }
-        ],
-        "process": []
+        "d": data["_Bitter_Cucumber_"],
+        "num": 120.0
       }, {
-        "en": "Mustard Leaf",
-        "tw": "芥菜",
-        "cn": "芥菜",
-        "ja": "カラシナ",
-        "num": 94.0,
-        "plant": [],
-        "cook": [],
-        "process": [
-          {
-            "name": "梅乾菜",
-            "url": "https://youtu.be/bcYYlL4xEbA"
-          },{
-            "name": "酸菜",
-            "url": "https://youtu.be/WThI1AeCHbg"
-          }
-        ]
+        "d": data["_Mustard_Leaf_"],
+        "num": 94.0
       }, {
-        "en": "Sweet Pepper",
-        "tw": "甜椒",
-        "cn": "彩椒",
-        "ja": "ピーマン",
-        "num": 77.0,
-        "plant": [],
-        "cook": [],
-        "process": []
+        "d": data["_Sweet_Pepper_"],
+        "num": 77.0
       }, {
-        "en": "Chinese Chive (Flower Stalk)",
-        "tw": "韭菜花",
-        "cn": "韭花",
-        "ja": "ハナニラ",
-        "num": 31.0,
-        "plant": [],
-        "cook": [],
-        "process": []
+        "d": data["_Chinese_Chive_Flower_Stalk_"],
+        "num": 31.0
       }, {
-        "en": "Tomato",
-        "tw": "番茄",
-        "cn": "西紅柿",
-        "ja": "トマト",
-        "num": 24.0,
-        "plant": [],
-        "cook": [],
-        "process": [
-        {
-            "name": "紫蘇梅醃漬蕃茄",
-            "url": "https://youtu.be/LUi6--XrHi8"
-          }
-        ]
+        "d": data["_Tomato_"],
+        "num": 24.0
       }, {
-        "en": "Winter Melon",
-        "tw": "冬瓜",
-        "cn": "冬瓜",
-        "ja": "トウガン",
-        "num": 24.0,
-        "plant": [],
-        "cook": [],
-        "process": [
-          {
-            "name": "冬瓜茶",
-            "url": "https://youtu.be/-EicKDsTdZw"
-          },{
-            "name": "蔭冬瓜",
-            "url": "https://youtu.be/e22B8GvDO1g"
-          }
-        ]
+        "d": data["_Winter_Melon_"],
+        "num": 24.0
       }, {
-        "en": "Chinese Chive",
-        "tw": "韭菜",
-        "cn": "韭菜",
-        "ja": "ニラ",
-        "num": 21.0,
-        "plant": [
-          {
-            "name": "韭菜移植教學",
-            "url": "https://youtu.be/jtF6WHs5pYQ"
-          }
-        ],
-        "cook": [],
-        "process": []
+        "d": data["_Chinese_Chive_"],
+        "num": 21.0
       }, {
-        "en": "Chinese Spinach",
-        "tw": "莧菜",
-        "cn": "苋菜",
-        "ja": "アマランス",
-        "num": 15.0,
-        "plant": [],
-        "cook": [],
-        "process": []
+        "d": data["_Chinese_Spinach_"],
+        "num": 15.0
       }, {
-        "en": "Radish",
-        "tw": "白蘿蔔",
-        "cn": "白萝卜",
-        "ja": "ダイコン",
-        "num": 13.0,
-        "plant": [],
-        "cook": [],
-        "process": [
-        {
-            "name": "蘿蔔乾",
-            "url": "https://youtu.be/kEKOhaiLe6k"
-          }
-        ]
+        "d": data["_Radish_"],
+        "num": 13.0
       }, {
-        "en": "Cucumber",
-        "tw": "小黃瓜",
-        "cn": "黃瓜",
-        "ja": "胡瓜",
-        "num": 10.0,
-        "plant": [
-        {
-            "name": "小黃瓜種植",
-            "url": "https://youtu.be/Wv6loe31VlU"
-          }
-        ],
-        "cook": [],
-        "process": [
-        {
-            "name": "醃脆瓜",
-            "url": "https://youtu.be/yO_qMRihgdQ"
-          }
-        ]
+        "d": data["_Cucumber_"],
+        "num": 10.0
       }, {
-        "en": "Blanched Chinese Chive",
-        "tw": "韭黃",
-        "cn": "韭黄",
-        "ja": "きにら",
-        "num": 9.0,
-        "plant": [],
-        "cook": [],
-        "process": []
+        "d": data["_Blanched_Chinese_Chive_"],
+        "num": 9.0
       }, {
-        "en": "Pumpkin",
-        "tw": "南瓜",
-        "cn": "南瓜",
-        "ja": "南瓜",
-        "num": 9.0,
-        "plant": [],
-        "cook": [
-        {
-           "name": "南瓜粉蒸排骨",
-            "url": "https://youtu.be/b9Jkk6kl3Rc"
-          },{
-            "name": "蛤蠣南瓜濃湯",
-            "url": "https://youtu.be/oItU0GAqcWQ"
-          }
-        ],
-        "process": [
-        ]
+        "d": data["_Pumpkin_"],
+        "num": 9.0
       }, {
-        "en": "Onion",
-        "tw": "洋蔥",
-        "cn": "洋葱",
-        "ja": "タマネギ",
-        "num": 7.4,
-        "plant": [],
-        "cook": [],
-        "process": []
+        "d": data["_Onion_"],
+        "num": 7.4
       }, {
-        "en": "Carrot",
-        "tw": "紅蘿蔔",
-        "cn": "胡萝卜",
-        "ja": "人参",
-        "num": 5.9,
-        "plant": [],
-        "cook": [],
-        "process": []
+        "d": data["_Carrot_"],
+        "num": 5.9
       }, {
-        "en": "Angled Luffa",
-        "tw": "絲瓜",
-        "cn": "丝瓜",
-        "ja": "糸瓜",
-        "num": 5.0,
-        "plant": [],
-        "cook": [],
-        "process": []
+        "d": data["_Angled_Luffa_"],
+        "num": 5.0
       }, {
-        "en": "Eggplant",
-        "tw": "茄子",
-        "cn": "茄子",
-        "ja": "ナス",
-        "num": 3.0,
-        "plant": [],
-        "cook": [
-        {
-           "name": "涼拌茄子",
-            "url": "https://youtu.be/0RMNxpAzhWk"
-          }
-        ],
-        "process": [
-        ]
+        "d": data["_Eggplant_"],
+        "num": 3.0
       }
     ]
   });
 
-})(collector);
+})(collector, all_data);
