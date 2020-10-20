@@ -403,5 +403,14 @@ const all_data = {
     "plant": [],
     "cook": [],
     "process": []
+  },
+  "_Garland_Chrysanthemum_": {
+    "en": "Garland Chrysanthemum",
+    "tw": "茼蒿",
+    "cn": "",
+    "ja": "",
+    "plant": [],
+    "cook": [],
+    "process": []
   }
 };
