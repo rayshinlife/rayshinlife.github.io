@@ -408,7 +408,7 @@ const all_data = {
     "en": "Garland Chrysanthemum",
     "tw": "茼蒿",
     "cn": "茼蒿",
-    "ja": "春菊(しゅんぎく)",
+    "ja": "春菊 (しゅんぎく)",
     "plant": [],
     "cook": [],
     "process": []
@@ -416,7 +416,7 @@ const all_data = {
   "_Pea_": {
     "en": "Pea",
     "tw": "豌豆",
-    "cn": "豌豆(青豆)",
+    "cn": "豌豆/青豆",
     "ja": "エンドウ",
     "plant": [],
     "cook": [],
