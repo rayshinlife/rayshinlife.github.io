@@ -390,7 +390,7 @@ const all_data = {
     "en": "Avocado",
     "tw": "酪梨",
     "cn": "牛油果",
-    "ja": "",
+    "ja": "アボカド",
     "plant": [],
     "cook": [],
     "process": []
@@ -398,8 +398,8 @@ const all_data = {
   "_Mango_": {
     "en": "Mango",
     "tw": "芒果",
-    "cn": "",
-    "ja": "",
+    "cn": "芒果",
+    "ja": "マンゴー",
     "plant": [],
     "cook": [],
     "process": []
@@ -407,8 +407,8 @@ const all_data = {
   "_Garland_Chrysanthemum_": {
     "en": "Garland Chrysanthemum",
     "tw": "茼蒿",
-    "cn": "",
-    "ja": "",
+    "cn": "茼蒿",
+    "ja": "春菊(しゅんぎく)",
     "plant": [],
     "cook": [],
     "process": []
@@ -416,8 +416,8 @@ const all_data = {
   "_Pea_": {
     "en": "Pea",
     "tw": "豌豆",
-    "cn": "",
-    "ja": "",
+    "cn": "豌豆(青豆)",
+    "ja": "エンドウ",
     "plant": [],
     "cook": [],
     "process": []
@@ -425,8 +425,8 @@ const all_data = {
   "_Celery_": {
     "en": "Celery",
     "tw": "芹菜/西洋芹",
-    "cn": "",
-    "ja": "",
+    "cn": "芹菜",
+    "ja": "セロリ",
     "plant": [],
     "cook": [],
     "process": []
@@ -434,8 +434,8 @@ const all_data = {
   "_Passion_Fruit_": {
     "en": "Passion Fruit",
     "tw": "百香果",
-    "cn": "",
-    "ja": "",
+    "cn": "鸡蛋果 ",
+    "ja": "パッションフルーツ",
     "plant": [],
     "cook": [],
     "process": []
