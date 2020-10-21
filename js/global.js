@@ -450,10 +450,10 @@ const all_data = {
     "process": []
   },
   "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
+    "en": "Apple",
+    "tw": "蘋果",
+    "cn": "苹果",
+    "ja": "りんご",
     "plant": [],
     "cook": [],
     "process": []
@@ -468,37 +468,37 @@ const all_data = {
     "process": []
   },
   "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
+    "en": "Grape",
+    "tw": "葡萄",
+    "cn": "葡萄",
+    "ja": "ぶどう",
     "plant": [],
     "cook": [],
     "process": []
   },
   "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
+    "en": "Peach",
+    "tw": "水蜜桃",
+    "cn": "水蜜桃",
+    "ja": "桃（もも）(ピーチ)",
     "plant": [],
     "cook": [],
     "process": []
   },
   "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
+    "en": "Nectarine",
+    "tw": "甜桃(油桃)",
+    "cn": "油桃",
+    "ja": "ネクタリン",
     "plant": [],
     "cook": [],
     "process": []
   },
   "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
+    "en": "Cherry",
+    "tw": "櫻桃",
+    "cn": "樱桃",
+    "ja": "さくらんぼ(チェリー)",
     "plant": [],
     "cook": [],
     "process": []
