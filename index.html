@@ -15,6 +15,7 @@
   <script src="js/vfiber.js"></script>
   <script src="js/fpesticide.js"></script>
   <script src="js/vpesticide.js"></script>
+  <script src="js/uspesticide.js"></script>
   <script>
   console.log(collector);
 
@@ -46,25 +47,46 @@
     return divs;
   }
 
-  function addBody(data, parent) {
-    const max = Math.max(...data.map(ele => ele.num)); 
+  function isNumTable(data) {
+    try {
+      return data[0].num !== undefined;
+    } catch(err) {
+      return false;
+    }
+  }
 
-    $.each(data, function(idx, ele) {
+  function extraStyle(ele, data) {
+    if (isNumTable(data)) {
+      const max = Math.max(...data.map(ele => ele.num)); 
       const left = Math.round(ele.num / max * 100);
       const right = left + 1;
-      const tbodyStyle = "border-bottom: 1px solid #f7f7f7; padding: 10px;";
-      const tbodyStyleBarChart = `background: linear-gradient(to right, #efefef ${left}%, white ${right}%);`;
+      return `background: linear-gradient(to right, #efefef ${left}%, white ${right}%);`;
+    } else {
+      return undefined;
+    }
+  }
 
-      $('<tr>').append(
-        $(`<td style="${tbodyStyle}">`).html(ele.d.tw),
-        $(`<td style="${tbodyStyle}">`).html(ele.d.cn),
-        $(`<td style="${tbodyStyle}">`).html(ele.d.en),
-        $(`<td style="${tbodyStyle}">`).html(ele.d.ja),
-        $(`<td style="${tbodyStyle + tbodyStyleBarChart}">`).html(ele.num),
-        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.plant)),
-        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.cook)),
-        $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.process))
-      ).appendTo(parent);
+  function addBody(data, parent) {
+    $.each(data, function(idx, ele) {
+      const tbodyStyleBarChart = extraStyle(ele, data);
+
+      const tbodyStyle = "border-bottom: 1px solid #f7f7f7; padding: 10px;";
+      try {
+        $('<tr>').append(
+          $(`<td style="${tbodyStyle}">`).html(ele.d.tw),
+          $(`<td style="${tbodyStyle}">`).html(ele.d.cn),
+          $(`<td style="${tbodyStyle}">`).html(ele.d.en),
+          $(`<td style="${tbodyStyle}">`).html(ele.d.ja),
+          (tbodyStyleBarChart) ? $(`<td style="${tbodyStyle + tbodyStyleBarChart}">`).html(ele.num): "",
+          $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.plant)),
+          $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.cook)),
+          $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.process))
+        ).appendTo(parent);
+      } catch (err) {
+        $('<tr>').append(
+          $(`<td colspan="0" style="${tbodyStyle}">`).text("some missing data in global.js"),
+        ).appendTo(parent);
+      }
     });
   }
 
@@ -103,7 +125,8 @@
   <h2>References:</h2>
   <p><a href="https://www.cfs.gov.hk/english/programme/programme_rafs/programme_rafs_n_01_04_01_fruit_veg_report.html" target="blank">維他命C & 膳食纖維</a></p>
   <p><a href="https://tw.appledaily.com/life/20190126/DGLFCEWAPMKX7DLQLMGZXYEEOA/" target="blank">台灣農藥</a></p>
-  <p><a href="https://heho.com.tw/archives/77891" target="blank">美國農藥</a></p>
+  <p><a href="https://heho.com.tw/archives/77891" target="blank">美國農藥(中文)</a></p>
+  <p><a href="https://draxe.com/health/dirty-dozen/" target="blank">美國農藥(英文)</a></p>
 </body>
 </html>
 

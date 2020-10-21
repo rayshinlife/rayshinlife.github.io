@@ -1,7 +1,7 @@
 (function(col, data) {
 
     col.push({
-      "title": "Fruit Pesticide",
+      "title": "TW Fruit Pesticide",
       "tag": "fpest",
       "columns": ["繁體", "简体", "English", "日本語", "不合格率", "種植", "食譜", "加工"], 
       "data": [
