@@ -439,5 +439,14 @@ const all_data = {
     "plant": [],
     "cook": [],
     "process": []
+  },
+  "_Spinach_": {
+    "en": "Spinach",
+    "tw": "菠菜",
+    "cn": "菠菜",
+    "ja": "ほうれん草",
+    "plant": [],
+    "cook": [],
+    "process": []
   }
 };
