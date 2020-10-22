@@ -4,6 +4,37 @@
   <title>Hello Table</title>
   <meta charset="utf-8" />
   <style>
+    .row.content {
+      height: 5500px;
+    }
+    
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+
+    #tooltip {
+      color: #222222; 
+      background-color: #ffdd00;
+      padding: 5px;
+      text-decoration: none;
+      position: relative;
+      display: none;
+    }
   </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,6 +51,23 @@
   <script src="js/cancer.js"></script>
   <script>
   // console.log(collector);
+
+  function scale(xMax, xMin, yMax, yMin, yInput) {
+    percent = (yInput - yMin) / (yMax - yMin);
+    return percent * (xMax - xMin) + xMin;
+  }
+
+  function getColorCode(target) {
+    const c = Math.round(255.0 - scale(0,255,0,20,target)).toString(16).padStart(2, "0");
+    return "#FF" + c + c;
+  }
+
+  var tooltipSpan = document.getElementById('tooltip');
+  window.onmousemove = function (e) {
+    var x = e.clientX, y = e.clientY;
+    tooltipSpan.style.top = (y + 16) + 'px';
+    tooltipSpan.style.left = (x + 16) + 'px';
+  }
 
   function createDiv(did) {
     return $("<div>", {
@@ -124,6 +172,7 @@
         { "code":1, "color":"#AA0000" }, 
         { "code":2, "color":"#00AA00" }
       ],
+      hoverColor: "#ffdd00",
       movesIslands: true,
       borderLineColor: "#000000", 
       onSelect: function(data){
@@ -144,15 +193,15 @@
       <div class="col-sm-3 sidenav">
         <h4>Blogger Tables</h4>
         <ul class="nav nav-pills nav-stacked">
-          <li class="active"><a data-toggle="tab" href="#main">Main Tables</a></li>
-          <li><a data-toggle="tab" href="#jpmap">Japan Map</a></li>
+          <li><a data-toggle="tab" href="#main">Main Tables</a></li>
+          <li class="active"><a data-toggle="tab" href="#jpmap">Japan Map</a></li>
           <!-- <li><a data-toggle="tab" href="#allKeywords">Show All Keywords</a></li>
           <li><a data-toggle="tab" href="#charts">Show Charts</a></li> -->
         </ul>
       </div>
       <div class="col-sm-9">
         <div class="tab-content">
-          <div id="main" class="tab-pane fade in active">
+          <div id="main" class="tab-pane fade">
             <div id="tables"></div>
             <hr>
             <h2>References:</h2>
@@ -161,7 +210,7 @@
             <p><a href="https://heho.com.tw/archives/77891" target="blank">美國農藥(中文)</a></p>
             <p><a href="https://draxe.com/health/dirty-dozen/" target="blank">美國農藥(英文)</a></p>
           </div>
-          <div id="jpmap" class="tab-pane fade">
+          <div id="jpmap" class="tab-pane fade in active">
             <div id="jpSweetPepper"></div>
           </div>
         </div>
