@@ -1,3 +1,4 @@
+var jpmap_collector = [];
 var collector = [];
 const all_data = {
   "_Guava_": {
