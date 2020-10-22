@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/japan-map-js@1.0.1/dist/jpmap.min.js"></script>
   <script src="js/global.js"></script>
   <script src="js/vvc.js"></script>
   <script src="js/fvc.js"></script>
@@ -18,7 +19,7 @@
   <script src="js/uspesticide.js"></script>
   <script src="js/cancer.js"></script>
   <script>
-  console.log(collector);
+  // console.log(collector);
 
   function createDiv(did) {
     return $("<div>", {
@@ -117,8 +118,23 @@
     });
   }
 
-  $(document).ready(function(){
+  function drawJpMap() {
+    var d = new jpmap.japanMap(document.getElementById("jpSweetPepper"), {
+      areas: [
+        { "code":1, "color":"#AA0000" }, 
+        { "code":2, "color":"#00AA00" }
+      ],
+      movesIslands: true,
+      borderLineColor: "#000000", 
+      onSelect: function(data){
+        alert(data.name);
+      }
+    });
+  }
+
+  $(document).ready(function() {
     printAllTables();
+    drawJpMap();
   });
   </script>
 </head>
@@ -146,6 +162,7 @@
             <p><a href="https://draxe.com/health/dirty-dozen/" target="blank">美國農藥(英文)</a></p>
           </div>
           <div id="jpmap" class="tab-pane fade">
+            <div id="jpSweetPepper"></div>
           </div>
         </div>
       </div>
