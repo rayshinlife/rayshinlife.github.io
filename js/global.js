@@ -236,7 +236,12 @@ const all_data = {
     "tw": "番茄",
     "cn": "西紅柿",
     "ja": "トマト",
-    "plant": [],
+    "plant": [
+      {
+        "name": "蕃茄隧道式棚架",
+        "url": "https://youtu.be/KCGn68iNTww"
+      }
+    ],
     "cook": [],
     "process": [
       {
@@ -296,6 +301,9 @@ const all_data = {
       {
         "name": "蘿蔔乾",
         "url": "https://youtu.be/kEKOhaiLe6k"
+      },{
+        "name": "純米蘿蔔糕",
+        "url": "https://youtu.be/qyfiEENCmkA"
       }
     ]
   }, 
@@ -466,7 +474,12 @@ const all_data = {
     "ja": "ぶどう",
     "plant": [],
     "cook": [],
-    "process": []
+    "process": [
+      {
+       "name": "釀葡萄酒",
+        "url": "https://youtu.be/EHOTLaG1lZ4"
+      }
+    ]
   },
   "_Peach_": {
     "en": "Peach",
