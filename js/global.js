@@ -472,14 +472,14 @@ const all_data = {
     "en": "Peach",
     "tw": "水蜜桃",
     "cn": "水蜜桃",
-    "ja": "桃（もも）(ピーチ)",
+    "ja": "桃(もも) (ピーチ)",
     "plant": [],
     "cook": [],
     "process": []
   },
   "_Nectarine_": {
     "en": "Nectarine",
-    "tw": "甜桃(油桃)",
+    "tw": "甜桃/油桃",
     "cn": "油桃",
     "ja": "ネクタリン",
     "plant": [],
@@ -490,7 +490,7 @@ const all_data = {
     "en": "Cherry",
     "tw": "櫻桃",
     "cn": "樱桃",
-    "ja": "さくらんぼ(チェリー)",
+    "ja": "さくらんぼ (チェリー)",
     "plant": [],
     "cook": [],
     "process": []
