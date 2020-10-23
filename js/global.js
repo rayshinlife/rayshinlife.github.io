@@ -495,56 +495,20 @@ const all_data = {
     "cook": [],
     "process": []
   },
-  "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
+  "_Pear_": {
+    "en": "Pear",
+    "tw": "梨",
+    "cn": "梨",
+    "ja": "梨(なし)",
     "plant": [],
     "cook": [],
     "process": []
   },
-  "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
-    "plant": [],
-    "cook": [],
-    "process": []
-  },
-  "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
-    "plant": [],
-    "cook": [],
-    "process": []
-  },
-  "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
-    "plant": [],
-    "cook": [],
-    "process": []
-  },
-  "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
-    "plant": [],
-    "cook": [],
-    "process": []
-  },
-  "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
+  "_Potato_": {
+    "en": "Potato",
+    "tw": "馬鈴薯",
+    "cn": "土豆",
+    "ja": "じゃがいも",
     "plant": [],
     "cook": [],
     "process": []
