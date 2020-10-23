@@ -512,6 +512,15 @@ const all_data = {
     "plant": [],
     "cook": [],
     "process": []
+  },
+  "_Kale_": {
+    "en": "Kale",
+    "tw": "羽衣甘藍",
+    "cn": "羽衣甘蓝",
+    "ja": "ケール",
+    "plant": [],
+    "cook": [],
+    "process": []
   }
 };
 
