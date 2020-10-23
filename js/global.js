@@ -472,7 +472,7 @@ const all_data = {
     "en": "Peach",
     "tw": "水蜜桃",
     "cn": "水蜜桃",
-    "ja": "桃(もも) (ピーチ)",
+    "ja": "桃 (もも) (ピーチ)",
     "plant": [],
     "cook": [],
     "process": []
@@ -499,7 +499,7 @@ const all_data = {
     "en": "Pear",
     "tw": "梨",
     "cn": "梨",
-    "ja": "梨(なし)",
+    "ja": "梨 (なし)",
     "plant": [],
     "cook": [],
     "process": []
