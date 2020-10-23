@@ -11,6 +11,22 @@
         "d": data["_Spinach_"]
       }, {
         "d": data["_Kale_"]
+      }, {
+        "d": data["_Kale_"]
+      }, {
+        "d": data["_Kale_"]
+      }, {
+        "d": data["_Kale_"]
+      }, {
+        "d": data["_Kale_"]
+      }, {
+        "d": data["_Kale_"]
+      }, {
+        "d": data["_Kale_"]
+      }, {
+        "d": data["_Kale_"]
+      }, {
+        "d": data["_Kale_"]
       }
     ]
   });
