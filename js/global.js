@@ -450,7 +450,7 @@ const all_data = {
     "cook": [],
     "process": []
   },
-  "_Spinach_": {
+  "_Apple_": {
     "en": "Apple",
     "tw": "蘋果",
     "cn": "苹果",
@@ -459,16 +459,7 @@ const all_data = {
     "cook": [],
     "process": []
   },
-  "_Spinach_": {
-    "en": "Spinach",
-    "tw": "菠菜",
-    "cn": "菠菜",
-    "ja": "ほうれん草",
-    "plant": [],
-    "cook": [],
-    "process": []
-  },
-  "_Spinach_": {
+  "_Grape_": {
     "en": "Grape",
     "tw": "葡萄",
     "cn": "葡萄",
@@ -477,7 +468,7 @@ const all_data = {
     "cook": [],
     "process": []
   },
-  "_Spinach_": {
+  "_Peach_": {
     "en": "Peach",
     "tw": "水蜜桃",
     "cn": "水蜜桃",
@@ -486,7 +477,7 @@ const all_data = {
     "cook": [],
     "process": []
   },
-  "_Spinach_": {
+  "_Nectarine_": {
     "en": "Nectarine",
     "tw": "甜桃(油桃)",
     "cn": "油桃",
@@ -495,7 +486,7 @@ const all_data = {
     "cook": [],
     "process": []
   },
-  "_Spinach_": {
+  "_Cherry_": {
     "en": "Cherry",
     "tw": "櫻桃",
     "cn": "樱桃",
