@@ -18,6 +18,7 @@
     }
   </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/japan-map-js@1.0.1/dist/jpmap.min.js"></script>
@@ -25,20 +26,27 @@
   <script src="js/jpmap/sweetPepper.js"></script>
   <script src="js/jpmap/tomato.js"></script>
   <script>
+  var g_barData = null;
+
   function scale(xMax, xMin, yMax, yMin, yInput) {
     percent = (yInput - yMin) / (yMax - yMin);
     return percent * (xMax - xMin) + xMin;
   }
 
-  function getColorCode(max, target) {
-    const c = Math.round(255.0 - scale(0,255,0,max,target)).toString(16).padStart(2, "0");
-    return `#${c}FF${c}`;
+  function getColorCode(max, target, isHex=true) {
+    if (isHex) {
+      const c = Math.round(255.0 - scale(0,255,0,max,target)).toString(16).padStart(2, "0");
+      return `#${c}FF${c}`;
+    } else {
+      const c = Math.round(255.0 - scale(0,255,0,max,target));
+      return `rgba(${c}, 255, ${c}, 1)`;
+    }
   }
 
   function drawJpMapById(id) {
     const ele = jpmap_collector[id]; 
 
-    const max = Math.max(...ele.data.map(o => o.num)); ;
+    const max = Math.max(...ele.data.map(o => o.num));
     area = [];
     $.each(ele.data, function(i, d) {
       area.push({
@@ -57,6 +65,7 @@
       const btn = $(`<button id="btn${idx}" type="button" class="btn btn-primary">`)
         .text(ele.title)
         .on("click", function() {
+          updateBarData(idx);
           drawJpMapById(idx);
         });
       $("#buttons").append(btn);
@@ -93,6 +102,47 @@
     });
   }
 
+  function getTop10Element(id) {
+    const vegData = jpmap_collector[id];
+    const top10 = vegData["data"].sort(function(a, b){ return b.num - a.num }).slice(0, 10);
+    
+    return top10;
+  }
+
+  function getDataset(top10, id) {
+    const max = top10[0].num;
+    console.log(max);
+    console.log(top10);
+
+    return [{
+      label: jpmap_collector[id].title,
+      data: top10.map(ele => ele.num),
+      backgroundColor: top10.map(ele => getColorCode(max, ele.num, false)),
+      borderColor: Array(10).fill('rgba(0, 0, 0, 1)'),
+      borderWidth: 1
+    }];
+  }
+
+  function convertBarData(id) {
+    const top10 = getTop10Element(id);
+    let barData = {
+      labels: top10.map(ele => ele.area),
+      datasets: getDataset(top10, id)
+    };
+
+    return barData;
+  }
+
+  function updateBarData(id) {
+    const top10 = getTop10Element(id);
+    g_barData.labels = top10.map(ele => ele.area);
+    g_barData.datasets = getDataset(top10, id);
+
+    console.log(g_barData);
+
+    window.myBar.update();
+  }
+
   $(document).ready(function() {
     var tooltipSpan = document.getElementById('tooltip');
     window.onmousemove = function (e) {
@@ -101,7 +151,24 @@
       tooltipSpan.style.left = (x + 16) + 'px';
     };
 
+    g_barData = convertBarData(0);
+    var ctxBar = document.getElementById("barChart");
+    window.myBar = new Chart(ctxBar, {
+      type: 'horizontalBar',
+      data: g_barData,
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+
     drawAllButton();
+    drawJpMapById(0);
   });
   </script>
 </head>
@@ -113,7 +180,7 @@
     <tbody>
       <tr>
         <td><div id="jpmap"></div></td>
-        <td></td>
+        <td><canvas id="barChart" width="500" height="500"></canvas></td>
       </tr>
       <tr><td colspan="2" id="buttons"></td></tr>
     </tbody>
