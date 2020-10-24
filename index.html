@@ -26,7 +26,7 @@
   <script src="js/vpesticide.js"></script>
   <script src="js/uspesticide.js"></script>
   <script src="js/cancer.js"></script>
-  <script src="js/jpSweetPepper.js"></script>
+  <script src="js/jpmap/sweetPepper.js"></script>
   <script>
   // console.log(collector);
   function scale(xMax, xMin, yMax, yMin, yInput) {
@@ -124,14 +124,25 @@
     return table;
   }
 
+  function copy2clipboard() {
+    $("#htmlcode").select();
+    document.execCommand('copy');
+  }
+
   function printAllTables() {
     $.each(collector, function(idx, ele) {
       const header = $("<h1>").text(ele.title);
       var div = createDiv(ele.tag).append(createTable(ele));
+      const button = $(`<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infoModal">`)
+        .text("Get HTML code")
+        .on("click", function() {
+          $('#htmlcode').val(div.html());
+        });
       const hr = $("<hr>");
 
       $('#tables').append(header);
       $('#tables').append(div);
+      $('#tables').append(button);
       $('#tables').append(hr);
     });
   }
@@ -207,6 +218,23 @@
   <p><a href="https://draxe.com/health/dirty-dozen/" target="blank">美國農藥(英文)</a></p>
   <span id="tooltip"></span>
 </body>
+
+<div class="modal fade" id="infoModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h4 id="infoTitle" class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <textarea id="htmlcode" rows="10" style="width: 100%;">
+        </textarea>
+      </div>
+      <div class="modal-footer">
+        <button claas="btn btn-primary" onclick="copy2clipboard();">Copy</button>
+        <button class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </html>
-
-
