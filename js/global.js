@@ -544,6 +544,51 @@ const all_data = {
     "plant": [],
     "cook": [],
     "process": []
+  },
+  "_Chili_": {
+    "en": "Chili",
+    "tw": "辣椒",
+    "cn": "辣椒",
+    "ja": "チリ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Chinese_kale_": {
+    "en": "Chinese_kale",
+    "tw": "芥藍",
+    "cn": "芥蓝",
+    "ja": "カイラン",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Kidney_Bean_": {
+    "en": "Kidney_Bean",
+    "tw": "菜豆",
+    "cn": "菜豆",
+    "ja": "インゲンマメ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Cowpea_": {
+    "en": "Cowpea",
+    "tw": "豇豆",
+    "cn": "豇豆",
+    "ja": "ササゲ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Kale_": {
+    "en": "Kale",
+    "tw": "羽衣甘藍",
+    "cn": "羽衣甘蓝",
+    "ja": "ケール",
+    "plant": [],
+    "cook": [],
+    "process": []
   }
 };
 
