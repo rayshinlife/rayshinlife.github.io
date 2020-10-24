@@ -445,9 +445,19 @@ const all_data = {
     "tw": "百香果",
     "cn": "鸡蛋果 ",
     "ja": "パッションフルーツ",
-    "plant": [],
+    "plant": [
+     {
+       "name": "滿天星百香果種植",
+        "url": "https://youtu.be/fo-3CDl9sI4"
+      }
+    ],
     "cook": [],
-    "process": []
+    "process": [
+     {
+       "name": "滿天星百香果種植",
+        "url": " https://youtu.be/p5EaaP7g5Mk"
+      }
+    ]
   },
   "_Spinach_": {
     "en": "Spinach",
