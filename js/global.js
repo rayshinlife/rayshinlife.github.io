@@ -603,7 +603,7 @@ const all_data = {
     "en": "Indian_Jujube",
     "tw": "印度棗",
     "cn": "印度枣",
-    "ja": "きんかん",
+    "ja": "インドナツメ",
     "plant": [],
     "cook": [],
     "process": []
