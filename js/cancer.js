@@ -2,7 +2,7 @@
 
   col.push({
     "title": "Cancer",
-    "tag": "uspest",
+    "tag": "stopcancer",
     "columns": ["繁體", "简体", "English", "日本語", "種植", "食譜", "加工"], 
     "data": [
       {
