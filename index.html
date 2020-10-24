@@ -132,7 +132,7 @@
   function printAllTables() {
     $.each(collector, function(idx, ele) {
       const header = $("<h1>").text(ele.title);
-      var div = createDiv(ele.tag).append(createTable(ele));
+      var div = $("<div>").append(createDiv(ele.tag).append(createTable(ele)));
       const button = $(`<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infoModal">`)
         .text("Get HTML code")
         .on("click", function() {
@@ -159,8 +159,7 @@
         });
       });
 
-      console.log(area);
-
+      // console.log(area);
       var div = document.createElement('div');
       div.id = ele.tag;
       document.body.appendChild(div);
