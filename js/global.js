@@ -555,7 +555,7 @@ const all_data = {
     "process": []
   },
   "_Chinese_kale_": {
-    "en": "Chinese_kale",
+    "en": "Chinese kale",
     "tw": "芥藍",
     "cn": "芥蓝",
     "ja": "カイラン",
@@ -564,7 +564,7 @@ const all_data = {
     "process": []
   },
   "_Kidney_Bean_": {
-    "en": "Kidney_Bean",
+    "en": "Kidney Bean",
     "tw": "菜豆",
     "cn": "菜豆",
     "ja": "インゲンマメ",
@@ -600,7 +600,7 @@ const all_data = {
     "process": []
   },
   "_Indian_Jujube_": {
-    "en": "Indian_Jujube",
+    "en": "Indian Jujube",
     "tw": "印度棗",
     "cn": "印度枣",
     "ja": "インドナツメ",
