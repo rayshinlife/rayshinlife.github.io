@@ -14,27 +14,27 @@
         }, {
           "d": data["_Mandarin_Orange_"],
           "num": 10.0
+        },{
+          "d": data["_Kumquat_"],
+          "num": 8.7
         }, {
-          "d": data["_Mandarin_Orange_"],
-          "num": 10.0
+          "d": data["_Banana_"],
+          "num": 7.7
         }, {
-          "d": data["_Mandarin_Orange_"],
-          "num": 10.0
+          "d": data["_Longan_"],
+          "num": 7.3
         }, {
-          "d": data["_Mandarin_Orange_"],
-          "num": 10.0
+          "d": data["_Oranges_"],
+          "num": 7.1
         }, {
-          "d": data["_Mandarin_Orange_"],
-          "num": 10.0
+          "d": data["_Lemons_"],
+          "num": 7.1
         }, {
-          "d": data["_Mandarin_Orange_"],
-          "num": 10.0
+          "d": data["_Litchi_"],
+          "num": 6.6
         }, {
-          "d": data["_Mandarin_Orange_"],
-          "num": 10.0
-        }, {
-          "d": data["_Mandarin_Orange_"],
-          "num": 10.0
+          "d": data["_Indian_Jujube_"],
+          "num": 6.5
         }
       ]
     });
