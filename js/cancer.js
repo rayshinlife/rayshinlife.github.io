@@ -7,6 +7,36 @@
     "data": [
       {
         "d": data["_Strawberry_"]
+      }, {
+          "d": data["_Green_tea_"],
+          "num": 6.5
+      }, {
+          "d": data["_Blackberry_"],
+          "num": 6.5
+      }, {
+          "d": data["_Raspberry_"],
+          "num": 6.5
+      }, {
+          "d": data["_Indian_Jujube_"],
+          "num": 6.5
+      }, {
+          "d": data["_Indian_Jujube_"],
+          "num": 6.5
+      }, {
+          "d": data["_Indian_Jujube_"],
+          "num": 6.5
+      }, {
+          "d": data["_Indian_Jujube_"],
+          "num": 6.5
+      }, {
+          "d": data["_Indian_Jujube_"],
+          "num": 6.5
+      }, {
+          "d": data["_Indian_Jujube_"],
+          "num": 6.5
+      }, {
+          "d": data["_Indian_Jujube_"],
+          "num": 6.5
       }
     ]
   });
