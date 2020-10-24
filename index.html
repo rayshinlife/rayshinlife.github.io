@@ -4,19 +4,10 @@
   <title>Hello Table</title>
   <meta charset="utf-8" />
   <style>
-    #tooltip {
-      color: #222222; 
-      background-color: #ffdd00;
-      padding: 5px;
-      text-decoration:none;
-      position:relative;
-      display:none;
-    }
   </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://unpkg.com/japan-map-js@1.0.1/dist/jpmap.min.js"></script>
   <script src="js/global.js"></script>
   <script src="js/vvc.js"></script>
   <script src="js/fvc.js"></script>
@@ -26,20 +17,8 @@
   <script src="js/vpesticide.js"></script>
   <script src="js/uspesticide.js"></script>
   <script src="js/cancer.js"></script>
-  <script src="js/jpmap/sweetPepper.js"></script>
-  <script src="js/jpmap/tomato.js"></script>
   <script>
   // console.log(collector);
-  function scale(xMax, xMin, yMax, yMin, yInput) {
-    percent = (yInput - yMin) / (yMax - yMin);
-    return percent * (xMax - xMin) + xMin;
-  }
-
-  function getColorCode(max, target) {
-    const c = Math.round(255.0 - scale(0,255,0,max,target)).toString(16).padStart(2, "0");
-    return `#${c}FF${c}`;
-  }
-
   function createDiv(did) {
     return $("<div>", {
       id: did,
@@ -148,63 +127,9 @@
     });
   }
 
-  function drawAllJpMap() {
-    $.each(jpmap_collector, function(idx, ele) {
-      const max = Math.max(...ele.data.map(o => o.num)); ;
-      area = [];
-      $.each(ele.data, function(i, d) {
-        area.push({
-          "code": jp_dict[d.area], 
-          "number": d.num,
-          "color": getColorCode(max, d.num)
-        });
-      });
-
-      // console.log(area);
-      var div = document.createElement('div');
-      div.id = ele.tag;
-      document.body.appendChild(div);
-      drawJpMap(area, ele.tag);
-    });
-  }
-
-  function drawJpMap(area, id) {
-    new jpmap.japanMap(document.getElementById(id), {
-      areas: area,
-      hoverColor: "#ffdd00",
-      movesIslands: true,
-      borderLineColor: "#000000", 
-      onSelect: function(data){
-        alert(data.name);
-      },
-      onHover: function(data){
-        var tt = document.getElementById("tooltip");
-
-        if (data.area.number == 0) {
-          tt.innerHTML = (data.name);
-        } else {
-          tt.innerHTML = (data.name + " 種植噸數: " + data.area.number);
-        }
-
-        tt.style = "display:block; position:fixed; overflow:hidden;";
-      },
-      onHoverOut: function(data) {
-        var tt = document.getElementById("tooltip");
-        tt.style = "display:none;";
-      }
-    });
-  }
 
   $(document).ready(function() {
-    var tooltipSpan = document.getElementById('tooltip');
-    window.onmousemove = function (e) {
-      var x = e.clientX, y = e.clientY;
-      tooltipSpan.style.top = (y + 16) + 'px';
-      tooltipSpan.style.left = (x + 16) + 'px';
-    };
-
     printAllTables();
-    drawAllJpMap();
   });
   </script>
 </head>
@@ -216,7 +141,6 @@
   <p><a href="https://tw.appledaily.com/life/20190126/DGLFCEWAPMKX7DLQLMGZXYEEOA/" target="blank">台灣農藥</a></p>
   <p><a href="https://heho.com.tw/archives/77891" target="blank">美國農藥(中文)</a></p>
   <p><a href="https://draxe.com/health/dirty-dozen/" target="blank">美國農藥(英文)</a></p>
-  <span id="tooltip"></span>
 </body>
 
 <div class="modal fade" id="infoModal" role="dialog">
