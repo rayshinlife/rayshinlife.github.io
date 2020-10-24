@@ -37,7 +37,7 @@
 
   function getColorCode(max, target) {
     const c = Math.round(255.0 - scale(0,255,0,max,target)).toString(16).padStart(2, "0");
-    return "#FF" + c + c;
+    return `#${c}FF${c}`;
   }
 
   function createDiv(did) {
