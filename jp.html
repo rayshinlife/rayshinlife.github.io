@@ -62,7 +62,7 @@
 
   function drawAllButton() {
     $.each(jpmap_collector, function(idx, ele) {
-      const btn = $(`<button id="btn${idx}" type="button" class="btn btn-primary">`)
+      const btn = $(`<button id="btn${idx}" type="button" class="btn btn-success">`)
         .text(ele.title)
         .on("click", function() {
           updateBarData(idx);
@@ -180,7 +180,7 @@
     <tbody>
       <tr>
         <td><div id="jpmap"></div></td>
-        <td><canvas id="barChart" width="500" height="500"></canvas></td>
+        <td><canvas id="barChart" width="700" height="500"></canvas></td>
       </tr>
       <tr><td colspan="2" id="buttons"></td></tr>
     </tbody>
