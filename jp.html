@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello Jp Agriculture</title>
+  <meta charset="utf-8" />
+  <style>
+    tbody > tr > td {
+      border-bottom: 1px solid #f7f7f7;
+    }
+
+    #tooltip {
+      color: #222222; 
+      background-color: #ffdd00;
+      padding: 5px;
+      text-decoration:none;
+      position:relative;
+      display:none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/japan-map-js@1.0.1/dist/jpmap.min.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/jpmap/sweetPepper.js"></script>
+  <script src="js/jpmap/tomato.js"></script>
+  <script>
+  function scale(xMax, xMin, yMax, yMin, yInput) {
+    percent = (yInput - yMin) / (yMax - yMin);
+    return percent * (xMax - xMin) + xMin;
+  }
+
+  function getColorCode(max, target) {
+    const c = Math.round(255.0 - scale(0,255,0,max,target)).toString(16).padStart(2, "0");
+    return `#${c}FF${c}`;
+  }
+
+  function drawJpMapById(id) {
+    const ele = jpmap_collector[id]; 
+
+    const max = Math.max(...ele.data.map(o => o.num)); ;
+    area = [];
+    $.each(ele.data, function(i, d) {
+      area.push({
+        "code": jp_dict[d.area], 
+        "number": d.num,
+        "color": getColorCode(max, d.num)
+      });
+    });
+
+    // console.log(area);
+    drawJpMap(area);
+  }
+
+  function drawAllButton() {
+    $.each(jpmap_collector, function(idx, ele) {
+      const btn = $(`<button id="btn${idx}" type="button" class="btn btn-primary">`)
+        .text(ele.title)
+        .on("click", function() {
+          drawJpMapById(idx);
+        });
+      $("#buttons").append(btn);
+    });
+  }
+
+  function drawJpMap(area) {
+    var myNode = document.getElementById("jpmap");
+    myNode.innerHTML = '';
+
+    new jpmap.japanMap(myNode, {
+      areas: area,
+      hoverColor: "#ffdd00",
+      movesIslands: true,
+      borderLineColor: "#000000", 
+      onSelect: function(data){
+        alert(data.name);
+      },
+      onHover: function(data){
+        var tt = document.getElementById("tooltip");
+
+        if (data.area.number == 0) {
+          tt.innerHTML = (data.name);
+        } else {
+          tt.innerHTML = (data.name + " 種植噸數: " + data.area.number);
+        }
+
+        tt.style = "display:block; position:fixed; overflow:hidden;";
+      },
+      onHoverOut: function(data) {
+        var tt = document.getElementById("tooltip");
+        tt.style = "display:none;";
+      }
+    });
+  }
+
+  $(document).ready(function() {
+    var tooltipSpan = document.getElementById('tooltip');
+    window.onmousemove = function (e) {
+      var x = e.clientX, y = e.clientY;
+      tooltipSpan.style.top = (y + 16) + 'px';
+      tooltipSpan.style.left = (x + 16) + 'px';
+    };
+
+    drawAllButton();
+  });
+  </script>
+</head>
+<body>
+  <span id="tooltip"></span>
+  <table>
+    <thead>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div id="jpmap"></div></td>
+        <td></td>
+      </tr>
+      <tr><td colspan="2" id="buttons"></td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
