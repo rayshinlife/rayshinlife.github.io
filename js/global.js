@@ -552,7 +552,15 @@ const all_data = {
     "ja": "チリ",
     "plant": [],
     "cook": [],
-    "process": []
+    "process": [
+     {
+       "name": "麻辣豆瓣醬",
+        "url": "https://youtu.be/EHOTLaG1lZ4"
+     },{
+        "name": "XO醬",
+        "url": "https://youtu.be/kckwa4asmlE"
+      }
+    ]
   },
   "_Chinese_kale_": {
     "en": "Chinese kale",
