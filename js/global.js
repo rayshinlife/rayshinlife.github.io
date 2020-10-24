@@ -581,11 +581,29 @@ const all_data = {
     "cook": [],
     "process": []
   },
-  "_Kale_": {
-    "en": "Kale",
-    "tw": "羽衣甘藍",
-    "cn": "羽衣甘蓝",
-    "ja": "ケール",
+  "_Kumquat_": {
+    "en": "Kumquat",
+    "tw": "金桔",
+    "cn": "金桔",
+    "ja": "きんかん",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Litchi_": {
+    "en": "Litchi",
+    "tw": "荔枝",
+    "cn": "荔枝",
+    "ja": "ライチー",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Indian_Jujube_": {
+    "en": "Indian_Jujube",
+    "tw": "印度棗",
+    "cn": "印度枣",
+    "ja": "きんかん",
     "plant": [],
     "cook": [],
     "process": []
