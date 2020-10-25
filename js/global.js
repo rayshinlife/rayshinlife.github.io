@@ -701,7 +701,7 @@ const all_data = {
     "en": "Soy Beans",
     "tw": "黃豆/大豆",
     "cn": "大豆",
-    "ja": "大豆(だいず)",
+    "ja": "大豆 (だいず)",
     "plant": [],
     "cook": [],
     "process": []
@@ -710,7 +710,7 @@ const all_data = {
     "en": "Ginseng",
     "tw": "人蔘",
     "cn": "人参",
-    "ja": "人参(ニンジン)",
+    "ja": "人参 (ニンジン)",
     "plant": [],
     "cook": [],
     "process": []
@@ -719,7 +719,7 @@ const all_data = {
     "en": "Maitake Mushroom",
     "tw": "舞菇/舞茸",
     "cn": "舞茸",
-    "ja": "舞茸(まいたけ)",
+    "ja": "舞茸 (まいたけ)",
     "plant": [],
     "cook": [],
     "process": []
@@ -806,7 +806,7 @@ const all_data = {
     "process": []
   },
   "_Olive_Oil_": {
-    "en": "Olive_Oil",
+    "en": "Olive Oil",
     "tw": "橄欖油",
     "cn": "橄榄油",
     "ja": "オリーブオイル",
