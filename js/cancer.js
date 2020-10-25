@@ -20,13 +20,13 @@
           "d": data["_Blueberry_"],
           "num": 6.5
       }, {
-          "d": data["_Orange_"],
+          "d": data["_Oranges_"],
           "num": 6.5
       }, {
           "d": data["_Grapefruit_"],
           "num": 6.5
       }, {
-          "d": data["_Lemon_"],
+          "d": data["_Lemons_"],
           "num": 6.5
       }, {
           "d": data["_Apple_"],
