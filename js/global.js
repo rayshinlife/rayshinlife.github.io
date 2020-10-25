@@ -615,6 +615,222 @@ const all_data = {
     "plant": [],
     "cook": [],
     "process": []
+  },
+  "_Green_tea_": {
+    "en": "Green tea",
+    "tw": "綠茶",
+    "cn": "绿茶",
+    "ja": "りょくちゃ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Blackberry_": {
+    "en": "Blackberry",
+    "tw": "黑莓",
+    "cn": "黑莓",
+    "ja": "ブラックベリー",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Blueberry_": {
+    "en": "Blueberry",
+    "tw": "藍莓",
+    "cn": "蓝莓",
+    "ja": "ブルーベリー",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Raspberry_": {
+    "en": "Raspberry",
+    "tw": "覆盆子",
+    "cn": "复盆子",
+    "ja": "ラズベリー",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Grapefruit_": {
+    "en": "Grapefruit",
+    "tw": "葡萄柚",
+    "cn": "葡萄柚",
+    "ja": "グレープフルーツ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Red_Grapes_": {
+    "en": "Red Grapes",
+    "tw": "紅葡萄/紅地球",
+    "cn": "红葡萄",
+    "ja": "赤ブドウ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Red_Wine_": {
+    "en": "Red Wine",
+    "tw": "紅酒/葡萄酒",
+    "cn": "紅酒",
+    "ja": "赤ワイン",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Indian_Jujube_": {
+    "en": "Indian Jujube",
+    "tw": "印度棗",
+    "cn": "印度枣",
+    "ja": "インドナツメ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Bok_Choy_": {
+    "en": "Bok Choy",
+    "tw": "小白菜",
+    "cn": "青菜",
+    "ja": "ちんげんさい",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Soy_Beans_": {
+    "en": "Soy Beans",
+    "tw": "黃豆/大豆",
+    "cn": "大豆",
+    "ja": "大豆(だいず)",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Ginseng_": {
+    "en": "Ginseng",
+    "tw": "人蔘",
+    "cn": "人参",
+    "ja": "人参(ニンジン)",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Maitake_Mushroom_": {
+    "en": "Maitake Mushroom",
+    "tw": "舞菇/舞茸",
+    "cn": "舞茸",
+    "ja": "舞茸(まいたけ)",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Licorice_": {
+    "en": "Licorice",
+    "tw": "甘草",
+    "cn": "甘草",
+    "ja": "リコリス",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Turmeric_": {
+    "en": "Turmeric",
+    "tw": "薑黃",
+    "cn": "姜黄",
+    "ja": "ターメリック",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Nutmeg_": {
+    "en": "Nutmeg",
+    "tw": "肉荳蔻",
+    "cn": "荳蔻",
+    "ja": "ナツメグ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Artichokes_": {
+    "en": "Artichokes",
+    "tw": "朝鮮薊",
+    "cn": "朝鲜蓟",
+    "ja": "アーティチョーク",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Lavender_": {
+    "en": "Lavender",
+    "tw": "薰衣草",
+    "cn": "薰衣草",
+    "ja": "ラベンダー",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Sea_Cucumber_": {
+    "en": "Sea Cucumber",
+    "tw": "海參",
+    "cn": "海参",
+    "ja": "ナマコ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Tuna_": {
+    "en": "Tuna",
+    "tw": "鮪魚",
+    "cn": "鲔鱼",
+    "ja": "ツナ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Parsley_": {
+    "en": "Parsley",
+    "tw": "荷蘭芹",
+    "cn": "荷兰芹",
+    "ja": "パセリ",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Garlic_": {
+    "en": "Garlic",
+    "tw": "蒜頭",
+    "cn": "大蒜",
+    "ja": "ニンニク",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Olive_Oil_": {
+    "en": "Olive_Oil",
+    "tw": "橄欖油",
+    "cn": "橄榄油",
+    "ja": "オリーブオイル",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Grape_Seed_Oil_": {
+    "en": "Grape Seed Oil",
+    "tw": "葡萄籽油",
+    "cn": "葡萄籽油",
+    "ja": "グレープシードオイル",
+    "plant": [],
+    "cook": [],
+    "process": []
+  },
+  "_Dark_Chocolate_": {
+    "en": "Dark Chocolate",
+    "tw": "黑巧克力",
+    "cn": "黑巧克力",
+    "ja": "ダークチョコレート",
+    "plant": [],
+    "cook": [],
+    "process": []
   }
 };
 
