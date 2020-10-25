@@ -1,6 +1,6 @@
 (function(col) {
   col.push({
-    "title": "Japan Onine",
+    "title": "Japan Onion",
     "tag": "jponion",
     "ref": "https://todo-ran.com/t/kiji/11567",
     "data": [
