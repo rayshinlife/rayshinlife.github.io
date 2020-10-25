@@ -29,6 +29,47 @@
   <script src="js/jpmap/greenOnion.js"></script>
   <script>
   var g_barData = null;
+  var g_total = 0;
+
+  Chart.plugins.register({
+    beforeRender: function (chart) {
+      if (chart.config.options.showAllTooltips) {
+        // create an array of tooltips, we can't use the chart tooltip because there is only one tooltip per chart
+        chart.pluginTooltips = [];
+        chart.config.data.datasets.forEach(function (dataset, i) {
+          chart.getDatasetMeta(i).data.forEach(function (sector, j) {
+            chart.pluginTooltips.push(new Chart.Tooltip({
+              _chart: chart.chart,
+              _chartInstance: chart,
+              _data: chart.data,
+              _options: chart.options.tooltips,
+              _active: [sector]
+            }, chart));
+          });
+        });
+
+        chart.options.tooltips.enabled = false;
+      }
+    },
+    afterDraw: function (chart, easing) {
+      if (chart.config.options.showAllTooltips) {
+        chart.options.tooltips.enabled = true;
+        Chart.helpers.each(chart.pluginTooltips, function (tooltip, idx) {
+          tooltip._options.callbacks.label = function(tooltipItem) {
+            const percentage = Math.round(parseFloat(tooltipItem.xLabel) / parseFloat(g_total) * 10000.0) / 100;
+            return `${percentage}% (${Math.round(parseFloat(tooltipItem.xLabel) * easing)})`;
+          };
+          
+          tooltip.initialize();
+          tooltip.update();
+          // make tooltips close to bar
+          tooltip.pivot();
+          tooltip.transition(easing).draw();
+        });
+        chart.options.tooltips.enabled = false;
+      }
+    }
+  });
 
   function scale(xMax, xMin, yMax, yMin, yInput) {
     percent = (yInput - yMin) / (yMax - yMin);
@@ -113,8 +154,8 @@
 
   function getDataset(top10, id) {
     const max = top10[0].num;
-    console.log(max);
-    console.log(top10);
+    // console.log(max);
+    // console.log(top10);
 
     return [{
       label: jpmap_collector[id].title,
@@ -136,12 +177,12 @@
   }
 
   function updateBarData(id) {
+    g_total = jpmap_collector[id].data.map(o => o.num).reduce((prev, next) => prev + next);
+
     const top10 = getTop10Element(id);
     g_barData.labels = top10.map(ele => ele.area);
     g_barData.datasets = getDataset(top10, id);
-
-    console.log(g_barData);
-
+    
     window.myBar.update();
   }
 
@@ -152,20 +193,48 @@
       tooltipSpan.style.top = (y + 16) + 'px';
       tooltipSpan.style.left = (x + 16) + 'px';
     };
-
+    
+    g_total = jpmap_collector[0].data.map(o => o.num).reduce((prev, next) => prev + next);
     g_barData = convertBarData(0);
     var ctxBar = document.getElementById("barChart");
     window.myBar = new Chart(ctxBar, {
       type: 'horizontalBar',
       data: g_barData,
       options: {
+        showAllTooltips: true,
+        tooltips: {
+          callbacks: {
+            // remove title
+            title: function(tooltipItem, data) {
+              return;
+            }
+          },
+          displayColors: false,
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          bodyFontSize: 16,
+          bodyFontColor: 'rgba(0, 0, 0, 1)',
+          xAlign: 'left',
+          mode: 'single'
+        },
         scales: {
-          yAxes: [{
+          xAxes: [{
             ticks: {
               beginAtZero: true
             }
           }]
-        }
+        },
+        layout: {
+          padding: {
+            left: 0,
+            right: 200,
+            top: 0,
+            bottom: 0
+          }
+        },
+        animation: {
+          duration: 3000,
+        },
+        events: []
       }
     });
 
