@@ -17,25 +17,88 @@
           "d": data["_Raspberry_"],
           "num": 6.5
       }, {
-          "d": data["_Indian_Jujube_"],
+          "d": data["_Blueberry_"],
           "num": 6.5
       }, {
-          "d": data["_Indian_Jujube_"],
+          "d": data["_Orange_"],
           "num": 6.5
       }, {
-          "d": data["_Indian_Jujube_"],
+          "d": data["_Grapefruit_"],
           "num": 6.5
       }, {
-          "d": data["_Indian_Jujube_"],
+          "d": data["_Lemon_"],
           "num": 6.5
       }, {
-          "d": data["_Indian_Jujube_"],
+          "d": data["_Apple_"],
           "num": 6.5
       }, {
-          "d": data["_Indian_Jujube_"],
+          "d": data["_Pineapple_"],
           "num": 6.5
       }, {
-          "d": data["_Indian_Jujube_"],
+          "d": data["_Cherry_"],
+          "num": 6.5
+      }, {
+          "d": data["_Red_Grapes_"],
+          "num": 6.5
+      }, {
+          "d": data["_Red_Wine_"],
+          "num": 6.5
+      }, {
+          "d": data["_Bok_Choy_"],
+          "num": 6.5
+      }, {
+          "d": data["_Kale_"],
+          "num": 6.5
+      }, {
+          "d": data["_Soy_Beans_"],
+          "num": 6.5
+      }, {
+          "d": data["_Ginseng_"],
+          "num": 6.5
+      }, {
+          "d": data["_Maitake_Mushroom_"],
+          "num": 6.5
+      }, {
+          "d": data["_Licorice_"],
+          "num": 6.5
+      }, {
+          "d": data["_Turmeric_"],
+          "num": 6.5
+      }, {
+          "d": data["_Nutmeg_"],
+          "num": 6.5
+      }, {
+          "d": data["_Artichokes_"],
+          "num": 6.5
+      }, {
+          "d": data["_Lavender_"],
+          "num": 6.5
+      }, {
+          "d": data["_Pumpkin_"],
+          "num": 6.5
+      }, {
+          "d": data["_Sea_Cucumber_"],
+          "num": 6.5
+      }, {
+          "d": data["_Tuna_"],
+          "num": 6.5
+      }, {
+          "d": data["_Parsley_"],
+          "num": 6.5
+      }, {
+          "d": data["_Garlic_"],
+          "num": 6.5
+      }, {
+          "d": data["_Tomato_"],
+          "num": 6.5
+      }, {
+          "d": data["_Olive_Oil_"],
+          "num": 6.5
+      }, {
+          "d": data["_Grape_Seed_Oil_"],
+          "num": 6.5
+      }, {
+          "d": data["_Dark_Chocolate_"],
           "num": 6.5
       }
     ]
