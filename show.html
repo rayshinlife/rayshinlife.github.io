@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+</style>
+<div>
+  <h1>Show Receipt</h1>
+  <div id="imgs">
+    <canvas id="imgdata" width="20" height="20" style="border:1px solid #000000;"></canvas>
+  </div>
+  <script>
+    function putParameters2Variables() {
+      const parseUrlQuery = (value) => {
+        var urlParams = new URL(value).searchParams
+        return Array.from(urlParams.keys()).reduce((acc, key) => {
+          acc[key] = urlParams.getAll(key)
+          return acc
+        }, {})
+      }
+
+      const res = parseUrlQuery(window.location.href);
+      console.log(res);
+    }
+
+    function handleMouseDown(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      startX = parseInt(e.clientX - offsetX);
+      startY = parseInt(e.clientY - offsetY);
+    }
+
+    function handleMouseMove(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      mouseX = parseInt(e.clientX - offsetX);
+      mouseY = parseInt(e.clientY - offsetY);
+
+      // ctx.clearRect(0, 0, cvs.width, cvs.height);
+      if (imgBackground) {
+        drawBackground(imgBackground);
+      }
+
+      var width = mouseX - startX;
+      var height = mouseY - startY;
+
+      ctx.strokeStyle = $("#item").val();
+      ctx.lineWidth = 2;
+      ctx.strokeRect(startX, startY, width, height);
+    }
+
+    function drawBackground(img) {
+      if (img.width > 1024) {
+        const ratio = (1024 / img.width);
+        cvs.width = 1024;
+        cvs.height = img.height * ratio;
+        ctx.drawImage(img, 0, 0, 1024, img.height * ratio);
+      } else {
+        cvs.width = img.width;
+        cvs.height = img.height;
+        ctx.drawImage(img, 0, 0);  
+      }
+    }
+
+    function handleUrlImg() {  
+      var url = $("#imgurl").val();
+      var img = new Image();
+
+      img.onload = function() {
+        imgBackground = img;
+        drawBackground(img);
+      }
+      img.src = url;
+    }
+
+    putParameters2Variables();
+
+    // var cvs = $('#imgdata').get(0);
+    // var ctx = cvs.getContext('2d');
+    
+    // var canvasOffset = $("#imgdata").offset();
+    // var offsetX = canvasOffset.left;
+    // var offsetY = canvasOffset.top;
+    // var scrollX = $("#imgdata").scrollLeft();
+    // var scrollY = $("#imgdata").scrollTop();
+
+    // var imgBackground = null;
+    // var startX = 0;
+    // var startY = 0;
+
+  </script>
+</div>
+
