@@ -28,8 +28,8 @@
       e.preventDefault();
       e.stopPropagation();
 
-      startX = parseInt(e.clientX - offsetX);
-      startY = parseInt(e.clientY - offsetY);
+      startX = parseInt(e.pageX - offsetX);
+      startY = parseInt(e.pageY - offsetY);
       isDown = true;
     }
 
@@ -53,8 +53,8 @@
         return;
       }
 
-      mouseX = parseInt(e.clientX - offsetX);
-      mouseY = parseInt(e.clientY - offsetY);
+      mouseX = parseInt(e.pageX - offsetX);
+      mouseY = parseInt(e.pageY - offsetY);
 
       if (imgBackground) {
         drawBackground(imgBackground);
@@ -112,8 +112,6 @@
     var canvasOffset = $("#imgdata").offset();
     var offsetX = canvasOffset.left;
     var offsetY = canvasOffset.top;
-    var scrollX = $("#imgdata").scrollLeft();
-    var scrollY = $("#imgdata").scrollTop();
 
     var isDown = false;
     var imgurl = "";
