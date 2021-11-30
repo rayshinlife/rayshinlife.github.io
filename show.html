@@ -19,33 +19,19 @@
       }
 
       const res = parseUrlQuery(window.location.href);
-      console.log(res);
+      startX = res["sx"][0];
+      startY = res["sy"][0];
+      mouseX = res["mx"][0];
+      mouseY = res["my"][0];
+      imgurl = res["address"][0];
+      color = res["color"][0];
     }
 
-    function handleMouseDown(e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      startX = parseInt(e.clientX - offsetX);
-      startY = parseInt(e.clientY - offsetY);
-    }
-
-    function handleMouseMove(e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      mouseX = parseInt(e.clientX - offsetX);
-      mouseY = parseInt(e.clientY - offsetY);
-
-      // ctx.clearRect(0, 0, cvs.width, cvs.height);
-      if (imgBackground) {
-        drawBackground(imgBackground);
-      }
-
+    function drawRect() {
       var width = mouseX - startX;
       var height = mouseY - startY;
 
-      ctx.strokeStyle = $("#item").val();
+      ctx.strokeStyle = color;
       ctx.lineWidth = 2;
       ctx.strokeRect(startX, startY, width, height);
     }
@@ -64,7 +50,7 @@
     }
 
     function handleUrlImg() {  
-      var url = $("#imgurl").val();
+      var url = imgurl;
       var img = new Image();
 
       img.onload = function() {
@@ -74,21 +60,20 @@
       img.src = url;
     }
 
-    putParameters2Variables();
-
-    // var cvs = $('#imgdata').get(0);
-    // var ctx = cvs.getContext('2d');
+    var cvs = $('#imgdata').get(0);
+    var ctx = cvs.getContext('2d');
     
-    // var canvasOffset = $("#imgdata").offset();
-    // var offsetX = canvasOffset.left;
-    // var offsetY = canvasOffset.top;
-    // var scrollX = $("#imgdata").scrollLeft();
-    // var scrollY = $("#imgdata").scrollTop();
+    var imgBackground = null;
+    var startX = 0;
+    var startY = 0;
+    var mouseX = 0;
+    var mouseY = 0;
+    var imgurl = "";
+    var color = "red";
 
-    // var imgBackground = null;
-    // var startX = 0;
-    // var startY = 0;
-
+    putParameters2Variables();
+    handleUrlImg();
+    drawRect();
   </script>
 </div>
 
