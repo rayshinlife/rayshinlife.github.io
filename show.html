@@ -35,6 +35,8 @@
     }
 
     function drawRect() {
+      console.log("draw");
+      
       var width = mouseX - startX;
       var height = mouseY - startY;
 
@@ -81,10 +83,7 @@
     putParameters2Variables();
     handleUrlImg();
 
-    window.setInterval(function() {
-      console.log("gogogo!");
-      drawRect();
-    }, 1000);
+    window.setInterval(drawRect, 1000);
   </script>
 </div>
 
