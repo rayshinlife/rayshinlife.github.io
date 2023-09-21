@@ -1,164 +1,240 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Hello Table</title>
-  <meta charset="utf-8" />
-  <style>
-  </style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/global.js"></script>
-  <script src="js/vvc.js"></script>
-  <script src="js/fvc.js"></script>
-  <script src="js/ffiber.js"></script>
-  <script src="js/vfiber.js"></script>
-  <script src="js/fpesticide.js"></script>
-  <script src="js/vpesticide.js"></script>
-  <script src="js/uspesticide.js"></script>
-  <script src="js/cancer.js"></script>
-  <script>
-  // console.log(collector);
-  function createDiv(did) {
-    return $("<div>", {
-      id: did,
-      css: {
-        "border": "1px solid #729c0b",
-        "display": "table"
-      }
-    });
-  }
-
-  function addHead(ele, parent) {
-    const theadStyle = "background: #729c0b; color: white; text-align: center; border-bottom: 1px solid #f7f7f7; padding: 10px;";
-    var tr = $('<tr>');
-    $.each(ele.columns, function(idx, ele) {
-      const td = $(`<td style="${theadStyle}">`).text(ele);
-      tr.append(td)
-    });
-    parent.append(tr);
-  }
-
-  function addLinks(arr) {
-    var divs = "";
-    $.each(arr, function(idx, ele) {
-      divs += `<div><a href="${ele.url}" target="blank">${ele.name}</a></div>`;
-    });
-    return divs;
-  }
-
-  function isNumTable(data) {
-    try {
-      return data[0].num !== undefined;
-    } catch(err) {
-      return false;
-    }
-  }
-
-  function extraStyle(ele, data) {
-    if (isNumTable(data)) {
-      const max = Math.max(...data.map(ele => ele.num)); 
-      const left = Math.round(ele.num / max * 100);
-      const right = left + 1;
-      return `background: linear-gradient(to right, #efefef ${left}%, white ${right}%);`;
-    } else {
-      return undefined;
-    }
-  }
-
-  function addBody(data, parent) {
-    $.each(data, function(idx, ele) {
-      const tbodyStyleBarChart = extraStyle(ele, data);
-
-      const tbodyStyle = "border-bottom: 1px solid #f7f7f7; padding: 10px;";
-      try {
-        $('<tr>').append(
-          $(`<td style="${tbodyStyle}">`).html(ele.d.tw),
-          $(`<td style="${tbodyStyle}">`).html(ele.d.cn),
-          $(`<td style="${tbodyStyle}">`).html(ele.d.en),
-          $(`<td style="${tbodyStyle}">`).html(ele.d.ja),
-          (tbodyStyleBarChart) ? $(`<td style="${tbodyStyle + tbodyStyleBarChart}">`).html(ele.num): "",
-          $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.plant)),
-          $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.cook)),
-          $(`<td style="${tbodyStyle}">`).html(addLinks(ele.d.process))
-        ).appendTo(parent);
-      } catch (err) {
-        $('<tr>').append(
-          $(`<td colspan="0" style="${tbodyStyle}">`).text("some missing data in global.js"),
-        ).appendTo(parent);
-      }
-    });
-  }
-
-  function createTable(ele) {
-    var table = $("<table border=0></table>");
-    var thead = $("<thead></thead>");
-    var tbody = $("<tbody></tbody>");
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>瑞星的一畝田</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  
+  </head>
+  <body>
     
-    addHead(ele, thead);
-    addBody(ele.data, tbody);
-
-    table.append(thead);
-    table.append(tbody);
-
-    return table;
-  }
-
-  function copy2clipboard() {
-    $("#htmlcode").select();
-    document.execCommand('copy');
-  }
-
-  function printAllTables() {
-    $.each(collector, function(idx, ele) {
-      const header = $("<h1>").text(ele.title);
-      var div = $("<div>").append(createDiv(ele.tag).append(createTable(ele)));
-      const button = $(`<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infoModal">`)
-        .text("Get HTML code")
-        .on("click", function() {
-          $('#htmlcode').val(div.html());
-        });
-      const hr = $("<hr>");
-
-      $('#tables').append(header);
-      $('#tables').append(div);
-      $('#tables').append(button);
-      $('#tables').append(hr);
-    });
-  }
-
-
-  $(document).ready(function() {
-    printAllTables();
-  });
-  </script>
-</head>
-<body>      
-  <div id="tables"></div>
-  <hr>
-  <h2>References:</h2>
-  <p><a href="https://www.cfs.gov.hk/english/programme/programme_rafs/programme_rafs_n_01_04_01_fruit_veg_report.html" target="blank">維他命C & 膳食纖維</a></p>
-  <p><a href="https://tw.appledaily.com/life/20190126/DGLFCEWAPMKX7DLQLMGZXYEEOA/" target="blank">台灣農藥</a></p>
-  <p><a href="https://heho.com.tw/archives/77891" target="blank">美國農藥(中文)</a></p>
-  <p><a href="https://draxe.com/health/dirty-dozen/" target="blank">美國農藥(英文)</a></p>
-</body>
-
-<div class="modal fade" id="infoModal" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button class="close" data-dismiss="modal">&times;</button>
-        <h4 id="infoTitle" class="modal-title">Modal Header</h4>
+    <!-- <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#!">Start Bootstrap</a>
+        <a class="btn btn-primary" href="#signup">Sign Up</a>
       </div>
-      <div class="modal-body">
-        <textarea id="htmlcode" rows="10" style="width: 100%;">
-        </textarea>
+    </nav> -->
+    
+    <header class="masthead">
+      <div class="container position-relative">
+        <div class="row justify-content-center">
+          <div class="col-xl-6">
+            <div class="text-center">
+              <!-- Page heading-->
+              <h1 style="padding: 10px; background-color:#EEEEEEAA; border-radius: 15px;">瑞星的一畝田</h1>
+              <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <!-- Email address input-->
+                <div class="row">
+                  <!-- <div class="col">
+                    <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+                  </div> -->
+                  <!-- <div><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit"><i class="bi-facebook fs-3"></i> 馬上下單</button></div> -->
+                </div>
+                <div class="d-none" id="submitSuccessMessage">
+                  <div class="text-center mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    <p>To activate this form, sign up at</p>
+                    <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                  </div>
+                </div>
+                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button claas="btn btn-primary" onclick="copy2clipboard();">Copy</button>
-        <button class="btn btn-danger" data-dismiss="modal">Close</button>
+    </header>
+    <!-- Icons Grid-->
+    <section class="features-icons bg-light text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon"><i class="fas fa-users"></i></div>
+              <h3>訂閱人數</h3>
+              <p class="lead mb-0">65,000</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon"><i class="fas fa-eye"></i></div>
+              <h3>月觀看次數</h3>
+              <p class="lead mb-0">228.6萬</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+              <div class="features-icons-icon"><i class="fas fa-video"></i></div>
+              <h3>10萬觀看影片數</h3>
+              <p class="lead mb-0">38</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+    </section>
+    <!-- Image Showcases-->
+    <section class="showcase">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-cup.jpg')"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>臻禾興業</h2>
+            <p class="lead mb-0">窯燒的陶瓷馬克杯，不掉色，耐高溫，印上豐富可愛療癒的鳥獸戲畫圖案，增添喝咖啡的樂趣。</p>
+          </div>
+        </div>
+        <div class="row g-0">
+          <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-bag2.jpg')"></div>
+          <div class="col-lg-6 my-auto showcase-text">
+            <h2>台北市立動物園</h2>
+            <p class="lead mb-0">質感休閒袋、購物袋，可以裝很多東⻄，柔軟卻堅固的帆布包，去郊遊、爬⼭、菜市場、超市都好裝好⽤。</p>
+          </div>
+        </div>
+        <div class="row g-0">
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-bottle.jpg')"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>台中科學博物館</h2>
+            <p class="lead mb-0">是您喝紅茶、抹茶、水果茶、冷泡茶和咖啡的好伴侶。無論上班、上課、郊遊、出國，你每天也需要時尚的隨身瓶嘍。輕巧好攜、內裝飲口蓋、方便不漏水、設計好貼心。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials-->
+    <section class="testimonials text-center bg-light">
+      <div class="container">
+        <h2 class="mb-5">來自相信我們的使用者</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
+              <h5>Margaret E.</h5>
+              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
+              <h5>Fred S.</h5>
+              <p class="font-weight-light mb-0">"It is amazing. I've been using it everyday."</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
+              <h5>Sarah W.</h5>
+              <p class="font-weight-light mb-0">"Thanks so much for making this available to us!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call to Action-->
+    <section class="call-to-action text-white text-center" id="signup">
+      <div class="container position-relative">
+        <div class="row justify-content-center">
+          <div class="col-xl-6">
+            <h2 class="mb-4">準備好了嗎？</h2>
+            <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+              <!-- Email address input-->
+              <div class="row">
+                <!-- <div class="col">
+                  <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                  <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
+                  <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
+                </div> -->
+                <div><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit"><i class="bi-facebook fs-3"></i> 馬上下單</button></div>
+              </div>
+              <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">
+                  <div class="fw-bolder">Form submission successful!</div>
+                  <p>To activate this form, sign up at</p>
+                  <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                </div>
+              </div>
+              <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <!-- <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item"><a href="#!">About</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Contact</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2021. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item me-4">
+                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+              </li>
+              <li class="list-inline-item me-4">
+                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("May 5, 2022 15:37:25").getTime();
+      
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+      
+        // Get today's date and time
+        var now = new Date().getTime();
+          
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+          
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+          
+        // If the count down is over, write some text 
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
+  </body>
 </html>
